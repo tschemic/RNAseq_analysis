@@ -33,10 +33,10 @@ fi
 
 GENOME=$WKDIR/required_files/C_albicans_SC5314_A22_current_chromosomesAM.fasta
 FEATURES=$WKDIR/required_files/C_albicans_SC5314_A22_current_features_haploid.gff
-ADAPT1=$(cat $WKDIR/required_files/Config_file.txt | grep Read1: | cut -d ":" -f 2)
+ADAPT1=$(cat $WKDIR/required_files/config_file.txt | grep Read1: | cut -d ":" -f 2)
 rRNA=$WKDIR/required_files/Ca_A22chrAM_rRNAloci.bed
 mkdir $WKDIR/QC
-PICARD=$(cat $WKDIR/required_files/Config_file.txt | grep "picard file path:" | cut -d ":" -f 2)
+PICARD=$(cat $WKDIR/required_files/config_file.txt | grep "picard file path:" | cut -d ":" -f 2)
 
 
 if [ $FORMAT == 'bam' ]
