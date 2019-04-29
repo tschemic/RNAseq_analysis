@@ -1,5 +1,6 @@
 # RNAseq_analysis
 Script for analysis of RNAseq data obtained from Candida albicans
+This script is used in the Kuchler lab (http://cdl.univie.ac.at/) at MFPL (https://www.mfpl.ac.at/de.html).
 
 This repository conatains a pipeline for the primary analysis of Illumina short read sequencing RNAseq data (single-end) obtained from the fungal pathogen Candida albicans. It includes the retrieval of genomic data required for analysis from the Candida Genome Database (CGD, http://www.candidagenome.org/), quality control of the raw data, trimming and mapping of reads, removal of reads mapping to ribosomal RNAs and counting the number of reads mapping to genes. Only the RNAseq raw data in .bam or .fastq format (compressed or uncompressed) have to be provided by the user.
 
