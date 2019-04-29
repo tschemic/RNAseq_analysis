@@ -1,0 +1,8 @@
+Enter path to working directory containing data files:/path/to/your/working/directory
+
+Enter adapter sequences:
+Read1:AGATCGGAAGAGCACACGTCTGAACTCCAGTCA
+
+Enter picard file path:/path/to/picard.jar
+
+
