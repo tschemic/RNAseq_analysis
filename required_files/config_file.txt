@@ -1,4 +1,4 @@
-Enter path to working directory containing data files:/path/to/your/working/directory
+Enter path to working directory containing data files:/path/to/RNAseq_analysis
 
 Enter adapter sequences:
 Read1:AGATCGGAAGAGCACACGTCTGAACTCCAGTCA
