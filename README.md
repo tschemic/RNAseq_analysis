@@ -6,12 +6,19 @@ This repository conatains a pipeline for the primary analysis of Illumina short 
 # Tools required for analysis:
 
 samtools (http://www.htslib.org/)
+
 bedtools (https://bedtools.readthedocs.io/en/latest/)
+
 FastQC (https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+
 MultiQC (https://multiqc.info/)
+
 cutadapt (https://cutadapt.readthedocs.io/en/stable/)
+
 NextGenMap (https://github.com/Cibiv/NextGenMap/wiki)
+
 DeepTools (https://deeptools.readthedocs.io/en/develop/)
+
 HTSeq (https://htseq.readthedocs.io/en/release_0.11.1/#)
 
 All the above-mentioned tools have to be included in yout PATH environment.
@@ -22,8 +29,11 @@ Picard tools (https://broadinstitute.github.io/picard/)
 # Usage:
 
 Clone the repository and copy the raw data into the RNAseq_analysis directory.
+
 Adjust the path to the RNAseq_analysis directory in the Config_file.txt.
+
 Adjust the path to your picard.jar file in the Config_file.txt.
+
 Change the adapter sequence for read trimming in the Config_file.txt if necessary. By default it contains the Illumina TrueSeq adapter.
   For adapter sequences see: https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/experiment-design/illumina-adapter-sequences-1000000002694-10.pdf
 Change into the required_files directory and run the analysis script (analysis_script.sh).
