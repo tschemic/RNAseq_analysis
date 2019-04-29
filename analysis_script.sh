@@ -2,7 +2,7 @@
 
 # Preparation and setup of required files
 
-WKDIR=$(grep "working directory" ./Config_file.txt | cut -d ":" -f 2)
+WKDIR=$(grep "working directory" ./config_file.txt | cut -d ":" -f 2)
 FILES=$WKDIR/required_files
 
 read -p 'Do you want to retrieve genomic data from the CGD? (yes or no): ' GENEDATA
