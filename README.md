@@ -30,9 +30,9 @@ Picard tools (https://broadinstitute.github.io/picard/)
 
 Clone the repository and copy the raw data into the RNAseq_analysis directory.
 
-Adjust the path to the RNAseq_analysis directory in the Config_file.txt.
+Adjust the path to the RNAseq_analysis directory in the config_file.txt.
 
-Adjust the path to your picard.jar file in the Config_file.txt.
+Adjust the path to your picard.jar file in the config_file.txt.
 
 Change the adapter sequence for read trimming in the Config_file.txt if necessary. By default it contains the Illumina TrueSeq adapter.
   For adapter sequences see: https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/experiment-design/illumina-adapter-sequences-1000000002694-10.pdf
