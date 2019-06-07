@@ -36,7 +36,7 @@ FEATURES=$WKDIR/required_files/C_albicans_SC5314_A22_current_features_haploid.gf
 ADAPT1=$(cat $WKDIR/required_files/config_file.txt | grep Read1: | cut -d ":" -f 2)
 rRNA=$WKDIR/required_files/Ca_A22chrAM_rRNAloci.bed
 mkdir $WKDIR/QC
-PICARD=$(cat $WKDIR/required_files/config_file.txt | grep "picard file path:" | cut -d ":" -f 2)
+PICARD=$WKDIR/required_files/picard.jar
 
 
 if [ $FORMAT == 'bam' ]
