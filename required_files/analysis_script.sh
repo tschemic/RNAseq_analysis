@@ -23,6 +23,11 @@ then
 	wget http://www.candidagenome.org/download/sequence/C_albicans_SC5314/Assembly22/current/C_albicans_SC5314_A22_current_chromosomes.fasta.gz  ## include WKDIR/required_files folder in wget!!!
 	wget http://www.candidagenome.org/download/gff/C_albicans_SC5314/Assembly22/C_albicans_SC5314_A22_current_features.gff
 	cat C_albicans_SC5314_A22_current_features.gff | egrep -v "Ca22chr[1-7R]B" > C_albicans_SC5314_A22_current_features_haploid.gff
+	cat C_albicans_SC5314_A22_current_features_haploid.gff | awk '$3=="gene"' | cut -f 9 | sed 's/;/      /' | cut -f 1 | sed 's/ID=//' > A22_IDs.txt
+	cat C_albicans_SC5314_A22_current_features_haploid.gff | awk '$3=="gene"' | cut -f 9 | awk -F'Note=' -vOFS='\t' '{print $2}' | sed 's/%28//' | sed 's/%29/)/g' | sed 's/)%20/ /' | sed 's/%28/(/g'  | cut -f 1 > A19_IDs.txt
+	cat C_albicans_SC5314_A22_current_features_haploid.gff | awk '$3=="gene"' | cut -f 9 | awk -F';Note=' -vOFS='\t' '{print $1}' | awk -F'Gene=' -vOFS='\t' '{print $2}' | sed 's/%28/(/g' | sed 's/%29/)/g' > names.txt
+	paste A22_IDs.txt A19_IDs.txt names.txt > A22_A19_names.txt
+	rm A22_IDs.txt A19_IDs.txt names.txt
 	gunzip C_albicans_SC5314_A22_current_chromosomes.fasta.gz
 	cat C_albicans_SC5314_A22_current_chromosomes.fasta | egrep ">Ca22chr[1-7RM][A_]" | sed 's/>//g' | sed 's/(/1	/g' | sed 's/ nucleotides)//g' | sed 's/ /	/g' > chrMA.bed
 	bedtools getfasta -fi C_albicans_SC5314_A22_current_chromosomes.fasta -bed chrMA.bed | fold -w 60 | sed 's/:1-[0-9]*//g' > C_albicans_SC5314_A22_current_chromosomesAM.fasta
