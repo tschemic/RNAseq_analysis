@@ -59,7 +59,7 @@ fi
 if [ $QCRAW == 'yes' ]
 then
 	echo 'Quality control of raw data:'
-	for i in $WKDIR/$(ls $WKDIR | egrep '(\.f.*q)|(\.bam)')
+	for i in $WKDIR/$(ls $WKDIR | egrep '(\.f.*q)|(q\.gz)')
 	do
 		fastqc -o $WKDIR/QC $i
 	done
@@ -69,7 +69,7 @@ fi
 
 # Adapter removal with cutadapt and mapping of all files with NGM
 
-for i in $WKDIR/$(ls $WKDIR | egrep '(\.f.*q)|(\.bam)')
+for i in $WKDIR/$(ls $WKDIR | egrep '(\.f.*q)|(q\.gz)')
 do
 	SNAME=$(echo $i | sed 's:/.*/::g')
 	cutadapt -q 30 -a $ADAPT1 $i > $i.trimmed.fq 2>$WKDIR/QC/$SNAME.cutadapt.report.txt   # removes Illumina TrueSeq adapters from reads (change -a for different adapters); -j specifies number of cores to use, remove if not sure
