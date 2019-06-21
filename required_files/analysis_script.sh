@@ -59,7 +59,8 @@ fi
 if [ $QCRAW == 'yes' ]
 then
 	echo 'Quality control of raw data:'
-	for i in $WKDIR/$(ls $WKDIR | egrep '(\.f.*q$)|(q\.gz$)')
+	#for i in $WKDIR/$(ls $WKDIR | egrep '(\.f.*q$)|(q\.gz$)')
+	for i in $WKDIR/*.fq.gz
 	do
 		fastqc -o $WKDIR/QC $i
 	done
@@ -69,11 +70,12 @@ fi
 
 # Adapter removal with cutadapt and mapping of all files with NGM
 
-for i in $WKDIR/$(ls $WKDIR | egrep '(\.f.*q$)|(q\.gz$)')
+#for i in $WKDIR/$(ls $WKDIR | egrep '(\.f.*q$)|(q\.gz$)')
+for i in $WKDIR/*.fq.gz
 do
 	SNAME=$(echo $i | sed 's:/.*/::g')
 	cutadapt -q 30 -a $ADAPT1 $i > $i.trimmed.fq 2>$WKDIR/QC/$SNAME.cutadapt.report.txt   # removes Illumina TrueSeq adapters from reads (change -a for different adapters); -j specifies number of cores to use, remove if not sure
-	rm $i
+	#rm $i
 
 	ngm -q $i.trimmed.fq -r $GENOME -o $i.trimmed.fq.bam -b  # add -p for paired-end data; -t 6 is optional - means 6 threads of the processor are used, if you don't know what to do, remove it; --topn 1 --strata causes ngm to write only uniquely mapping reads to the output
 	rm $i.trimmed.fq
