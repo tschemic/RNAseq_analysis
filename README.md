@@ -24,9 +24,6 @@ HTSeq (https://htseq.readthedocs.io/en/release_0.11.1/#)
 
 All the above-mentioned tools have to be included in yout PATH environment.
 
-Picard tools (https://broadinstitute.github.io/picard/)
-  Download the picard.jar file and add the path to that file to the config_file.txt
-
 # Usage:
 
 Clone the repository and copy the raw data into the RNAseq_analysis directory.
