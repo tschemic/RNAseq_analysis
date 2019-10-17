@@ -18,7 +18,7 @@ read -p 'Are the libraries prepared in a strand-specific way? (yes or no): ' STR
 
 read -p 'Are the data paired-end? (yes or no): ' PAIRED
 
-read -p 'How many threads should be used for the analysis (use 1, if you are not sure): ' THREAD
+read -p 'How many threads (cores) should be used for the analysis (use 1, if you are not sure): ' THREAD
 
 if [ $GENEDATA == 'yes' ]
 then
