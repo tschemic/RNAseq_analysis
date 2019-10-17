@@ -117,7 +117,8 @@ do
 
 	# Labelling of duplicated reads and removal of optical duplicates
 	java -jar $PICARD MarkDuplicates REMOVE_SEQUENCING_DUPLICATES=true I=$i.trimmed.fq.bam.sort.bam.rRNAfilt.bam O=$i.final.bam M=$WKDIR/QC/$SNAME.markdup.metrics.txt
-
+	rm $i.trimmed.fq.bam.sort.bam.rRNAfilt.bam
+	
 	#Quality control and statistics about mapped samples
 	samtools flagstat $i.final.bam >> $WKDIR/QC/$SNAME.final.flagstat_analysis.txt   # flagstat analysis
 
