@@ -95,9 +95,9 @@ do
 	
 	if [ $PAIRED == 'yes' ]
 	then
-		cutadapt --interleaved -q 30 -j $THREAD -O 1 -a $ADAPT1 -A $ADAPT2 $i > $i.trimmed.fq 2>$WKDIR/QC/Cutadapt_$SNAME.txt  # removes adapters from reads (change adapter sequences in config_file.txt if necessary);
+		cutadapt --interleaved -q 30 -O 1 -a $ADAPT1 -A $ADAPT2 $i > $i.trimmed.fq 2>$WKDIR/QC/Cutadapt_$SNAME.txt  # removes adapters from reads (change adapter sequences in config_file.txt if necessary);
 	else
-		cutadapt -q 30 -j $THREAD -O 1 -a $ADAPT1 $i > $i.trimmed.fq 2>$WKDIR/QC/Cutadapt_$SNAME.txt
+		cutadapt -q 30 -O 1 -a $ADAPT1 $i > $i.trimmed.fq 2>$WKDIR/QC/Cutadapt_$SNAME.txt
 	fi
 	rm $i
 
