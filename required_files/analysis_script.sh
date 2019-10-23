@@ -149,6 +149,7 @@ done
 
 
 mkdir $WKDIR/count
+mkdir $WKDIR/diff_expr_analysis
 
 for i in $WKDIR/*.final.bam
 do
@@ -165,3 +166,7 @@ for i in $WKDIR/count/*.count.txt
 do
 	head -n -5 $i > $i.crop.txt  # clear count files for flags
 done
+
+cp $WKDIR/count/*.crop.txt $WKDIR/diff_expr_analysis
+cp $FILES/edgeR_analysis.R $WKDIR/diff_expr_analysis
+cp $FILES/Targets.txt $WKDIR/diff_expr_analysis
