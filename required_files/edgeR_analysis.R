@@ -1,7 +1,6 @@
 ######## Import libraries and plot cleanup script ##############################################
 library(edgeR)
 library(tidyverse)
-library(openxlsx)
 library(RCurl)
 eval(parse(text = getURL("https://raw.githubusercontent.com/tschemic/Additional_Scripts/master/plot_cleanup.R", ssl.verifypeer = FALSE)))
 
