@@ -26,7 +26,7 @@ All the above-mentioned tools have to be included in yout PATH environment.
 
 # Usage:
 
-Clone the repository by typing "git clone https://github.com/tschemic/RNAseq_analysis_mouse.git" and copy the raw data into the RNAseq_analysis directory.
+Clone the repository by typing "git clone https://github.com/tschemic/RNAseq_analysis.git" and copy the raw data into the RNAseq_analysis directory.
 
 Change the adapter sequence for read trimming in the config_file.txt if necessary. By default it contains the Illumina TrueSeq adapter.
   For adapter sequences see: https://emea.support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/experiment-design/illumina-adapter-sequences-1000000002694-11.pdf
